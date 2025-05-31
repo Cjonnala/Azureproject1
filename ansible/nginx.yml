@@ -1,0 +1,36 @@
+---
+- name: Install and configure NGINX on Chaitanya VM
+  hosts: chaitanya-server
+  become: yes
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install NGINX
+      apt:
+        name: nginx
+        state: present
+
+    - name: Remove default index.html
+      file:
+        path: /var/www/html/index.html
+        state: absent
+
+    - name: Upload student-form.html as index
+      copy:
+        src: student-form.html
+        dest: /var/www/html/index.html
+        mode: '0644'
+
+    - name: Upload success.html
+      copy:
+        src: success.html
+        dest: /var/www/html/success.html
+        mode: '0644'
+
+    - name: Ensure NGINX is running
+      service:
+        name: nginx
+        state: started
+        enabled: yes

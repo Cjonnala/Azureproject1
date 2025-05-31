@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration</title>
+  <style>
+    body {
+      background-color: #f9f5f0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: #fff8f0;
+      border: 2px solid #ffe0b2;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+    }
+    input, select {
+      width: 90%;
+      padding: 8px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      background-color: #ffcccb;
+      color: #333;
+      border: none;
+      cursor: pointer;
+    }
+    h2 {
+      color: #ff9999;
+    }
+    .cat {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Cat" class="cat">
+    <h2>Student Form 🐾</h2>
+    <form action="success.html" method="get">
+      <input type="text" name="name" placeholder="Your Name" required><br>
+      <input type="email" name="email" placeholder="Email" required><br>
+      <input type="text" name="roll" placeholder="Roll Number" required><br>
+      <select name="dept" required>
+        <option value="">Select Department</option>
+        <option value="cs">Computer Science</option>
+        <option value="ee">Electrical</option>
+        <option value="me">Mechanical</option>
+      </select><br>
+      <input type="submit" value="Register">
+    </form>
+  </div>
+</body>
+</html>
